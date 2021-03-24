@@ -1,0 +1,33 @@
+.panel-one {
+
+    height: 100vh;
+
+    &__image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__text {
+        font-family: 'Coda', sans-serif;
+        color: var(--text-color-light);
+        font-size: 10rem;
+        font-weight: 800;
+        letter-spacing: .5rem;
+        position: absolute;
+        top: 55%;
+        left: 45%;
+
+        @media screen and (max-width: 900px) {
+            font-size: 8rem;
+            left: 40%;
+        }
+    }
+}
+
+.panel-one__trigger-out {
+    position: fixed;
+    top: 100vh;
+    visibility: none;
+}

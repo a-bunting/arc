@@ -1,0 +1,32 @@
+#scroll-setup-top, #scroll-setup-bottom, #scroll-setup-offset {
+    position: fixed;
+    right: .2rem;
+    width: 10rem;
+    color: orangered;
+    padding: 1rem 3rem;
+    text-align: right;
+}
+
+#scroll-setup-top {
+    top: .2rem;
+    border-top: .2rem solid orangered;
+}
+
+#scroll-setup-offset {
+    bottom: 50%;
+    transform: translateY(50%);
+    border-top: .2rem solid orangered;
+}
+
+#scroll-setup-bottom {
+    bottom: .2rem;
+    border-bottom: .2rem solid orangered;
+}
+
+.scroll-hide {
+    visibility: none !important;
+}
+
+.scroll-axis {
+    width: 100% !important;
+}

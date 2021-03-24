@@ -1,0 +1,24 @@
+/* variables */
+:root {
+    --color-main-dark: #000;
+    --text-color-light: #fff;
+}
+
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-main-dark);
+    height: 500vh;
+}
+
+@import 'panel-one';
+@import 'scroll-setup';
