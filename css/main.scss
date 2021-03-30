@@ -13,12 +13,17 @@
 html {
     font-size: 62.5%;
     box-sizing: border-box;
+    font-family: 'Coda', sans-serif;
 }
 
 body {
+    background-image: linear-gradient(to bottom, black, rgba(#555555, .3));
+
     background-color: var(--color-main-dark);
-    height: 500vh;
 }
 
 @import 'panel-one';
-@import 'scroll-setup';
+@import 'panel-two';
+@import 'panel-three';
+
+@import 'question-marks';

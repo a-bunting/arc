@@ -1,6 +1,9 @@
-.panel-one {
+#panel-one {
+    height: 200vh;
+    // background-color: #000000;
+}
 
-    height: 100vh;
+.panel-one {
 
     &__image {
         position: absolute;
@@ -10,7 +13,6 @@
     }
 
     &__text {
-        font-family: 'Coda', sans-serif;
         color: var(--text-color-light);
         font-size: 10rem;
         font-weight: 800;
@@ -18,16 +20,11 @@
         position: absolute;
         top: 55%;
         left: 45%;
+        text-shadow: 0 .5rem .2rem black;
 
         @media screen and (max-width: 900px) {
             font-size: 8rem;
             left: 40%;
         }
     }
-}
-
-.panel-one__trigger-out {
-    position: fixed;
-    top: 100vh;
-    visibility: none;
 }

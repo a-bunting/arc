@@ -1,0 +1,40 @@
+#question-marks {
+    height: 100vh;
+}
+
+.question-marks {
+    position: relative;
+    height: 100%;
+
+    &__text {
+        color: white;
+        font-size: 4rem;
+        letter-spacing: .3rem;
+        overflow: none;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__qm {
+        position: absolute;
+        color: white;
+        font-size: 4rem;
+        font-family: sans-serif;
+
+        &--1 { font-size: 7rem; font-weight: bolder; transform: rotate(20deg); }
+        &--2 { font-size: 4rem; font-weight: bolder; transform: rotate(6deg); }
+        &--3 { font-size: 12rem; font-weight: bolder; transform: rotate(-9deg); }
+        &--4 { font-size: 9rem; font-weight: bolder; transform: rotate(-14deg); }
+        &--5 { font-size: 2rem; font-weight: bolder; transform: rotate(-15deg); }
+        &--6 { font-size: 5rem; font-weight: bolder; transform: rotate(30deg); }
+        &--7 { font-size: 2rem; font-weight: bolder; transform: rotate(-31deg); }
+        &--8 { font-size: 11rem; font-weight: bolder; transform: rotate(19deg); }
+        &--9 { font-size: 9rem; font-weight: bolder; transform: rotate(15deg); }
+        &--10 { font-size: 4rem; font-weight: bolder; transform: rotate(-27deg); }
+    }
+
+    &--1 { margin-top: -20vh;}
+}

@@ -9,24 +9,61 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Coda:wght@400;800&family=Raleway&display=swap" rel="stylesheet">    <link rel="stylesheet" href="css/main.css">
-    <script type="text/javascript" src="code/jQuery.min.js"></script>
-    <script type="text/javascript" src="code/ScrollTrigger.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
     <script type="text/javascript" src="code/scroll-setup.js"></script>
     <script type="text/javascript" src="code/code.js"></script>
 </head>
 <body>
     
-    <div id="scroll-setup-top" class="scroll-axis">Top</div>
+    <!-- <div id="scroll-setup-top" class="scroll-axis">Top</div>
     <div id="scroll-setup-offset" class="scroll-axis">Offset</div>
-    <div id="scroll-setup-bottom" class="scroll-axis">Bottom</div>
+    <div id="scroll-setup-bottom" class="scroll-axis">Bottom</div> -->
     
-    <header class="panel-one">
-        <img src="./asset/img/The_Arc.png" alt="The Arc - This is meant to be a picture of the Arc" class="panel-one__image">
-        <div class="panel-one__text">The Arc</div>
-    </header>
+    
+    <header id="panel-one">
+        <div class="panel-one">
+            <img src="./asset/img/The_Arc.png" alt="The Arc - This is meant to be a picture of the Arc" class="panel-one__image">
+            <div class="panel-one__text">The Arc</div>
+        </div>
+    </header>    
 
-    <div class="panel-one__trigger_out" style="position: absolute; top: 800px;">TO</div>
-    
+    <main>
+
+        <section id="panel-two">
+            <div class="panel-two">
+                <div class="panel-two__text">Why you need to level your Arc to 80...</div>
+                <div class="panel-two__flare">
+                    <div class="panel-two__flare--item">Right</div> 
+                    <div class="panel-two__flare--item">Now</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="question-marks">
+            <div class="question-marks">
+                <div class="question-marks__text">What does an Arc do?</div>
+                
+                <div class="question-marks__qm question-marks__qm--1" style="left: 10%; top: 83%;">?</div>
+                <div class="question-marks__qm question-marks__qm--2" style="left: 15%; top: 25%;">?</div>
+                <div class="question-marks__qm question-marks__qm--3" style="left: 25%; top: 75%;">?</div>
+                <div class="question-marks__qm question-marks__qm--4" style="left: 24%; top: 4%;">?</div>
+                <div class="question-marks__qm question-marks__qm--5" style="left: 40%; top: 22%;">?</div>
+                <div class="question-marks__qm question-marks__qm--6" style="left: 50%; top: 90%;">?</div>
+                <div class="question-marks__qm question-marks__qm--7" style="left: 63%; top: 55%;">?</div>
+                <div class="question-marks__qm question-marks__qm--8" style="left: 76%; top: 34%;">?</div>
+                <div class="question-marks__qm question-marks__qm--9" style="left: 78%; top: 80%;">?</div>
+                <div class="question-marks__qm question-marks__qm--10" style="left: 85%; top: 13%;">?</div>
+            </div>
+        </section>
+
+        <section id="panel-three">
+            <div class="panel-three">
+                This.
+            </div>
+        </section>
+
+    </main>
 
 </body>
 </html>
