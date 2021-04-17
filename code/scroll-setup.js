@@ -3,50 +3,42 @@ window.onload = function() {
     // register the scrolltrigger pluger with GSAP
     gsap.registerPlugin(ScrollTrigger);
 
-
-    gsap.to(['.panel-one img'], {
-        opacity: 0, 
-        ease: 'none',
+    const p1tl = gsap.timeline({
         scrollTrigger: {
-            trigger: '#panel-one img', 
-            pin: true,
-            start: () => 
-                'top ' + document.querySelector('.panel-one__text').offsetTop * 0.5
-            ,  
-            end: 'bottom top-=40%',
+            trigger: '#panel-one', 
+            start: 'top top', 
+            end: '+=1500rem', 
+            pin: true, 
             scrub: true
         }
     })
 
-    gsap.to(['.panel-one__text'], {
-        opacity: 0, 
-        ease: 'expo.in', 
-        scrollTrigger: {
-            trigger: '.panel-one__text', 
-            start: () => 
-                'top ' + document.querySelector('.panel-one__text').offsetTop
-            , 
-            end: 'bottom top-=50%',
-            pin: true,
-            scrub: true
-        }  
-    })
+    p1tl.to('body', {duration: 1})
+        .to(['.panel-one__image'], {
+            duration: 1, opacity: 0 
+        })
+        .to(['.panel-one__text'], {
+            duration: 1, opacity: 0 
+        }, 1)
+        .to('body', {duration: 1})
 
     // animations for panel two..
+    // fade out
     gsap.to('.panel-two', {
         ease: 'expo.in',
         opacity: 0,
         scrollTrigger: {
             trigger: '#panel-two', 
             start: () =>  0.5*document.querySelector('.panel-two__text').offsetHeight + ' center',
-            end: 'center top-=700', 
+            end: 'center top-=700rem', 
             scrub: true
         }
     })
 
+    // right now fly ins
     gsap.from('#panel-two .panel-two__flare--item', {
         stagger: {
-            each: 2, 
+            each: 3, 
             onComplete: () => {
                 // play slamming noise?
             }
@@ -57,7 +49,7 @@ window.onload = function() {
         scrollTrigger: {
             trigger: '#panel-two', 
             start: () =>  0.5*document.querySelector('.panel-two__text').offsetHeight + ' center',
-            end: 'center top', 
+            end: 'center top-=400rem', 
             scrub: true
         }  
     })
@@ -67,59 +59,118 @@ window.onload = function() {
         scrollTrigger: {
             trigger: '#panel-two', 
             start: () =>  0.5*document.querySelector('.panel-two__text').offsetHeight + ' center',
-            end: 'center top-=700', 
+            end: 'center top-=1150rem', 
             pin: true
         }
     })
 
     // question marks section...
+    // in
     gsap.from('.question-marks__qm', {
-        opacity: 0, 
-        stagger: 0.1, 
+        opacity: 0, stagger: 0.1, 
         scrollTrigger: {
-            trigger: '#question-marks', 
+            trigger: '#question-marks', toggleActions: 'play none none reverse',
             start: 'center center', 
-            end: 'center top', 
-            toggleActions: 'play none none reverse',
+            end: 'center top-=300rem', 
             scrub: true
         } 
     })
-
+    // out
     gsap.to('.question-marks__qm', {
-        opacity: 0, 
-        stagger: 0.1,
-        scale: 8,
+        opacity: 0, stagger: 0.1, scale: 8,
         scrollTrigger: {
-            trigger: '#question-marks', 
-            start: 'center top-=300', 
-            end: 'center top-=800', 
-            toggleActions: 'play none none reverse', 
+            trigger: '#question-marks', toggleActions: 'play none none reverse',
+            start: 'center top-=700rem', 
+            end: 'center top-=1300rem', 
             scrub: true
         }
     })
 
+    // and the text fades out.
+    gsap.to('.question-marks__text', {
+        opacity: 0, ease: 'expo.in',
+        scrollTrigger: {
+            trigger: '#question-marks', toggleActions: 'play none none reverse', 
+            start: 'center center',
+            end: 'bottom+=70rem top-=900rem',
+            scrub: true
+        }
+    })
+
+    // pin the section
     gsap.to('.question-marks', {
         scrollTrigger: {
             trigger: '#question-marks', 
             start: 'center center',
-            end: 'center top-=1200', 
-            pin: true
+            end: 'center top-=1450', 
+            pin: true, scrub: true
         }
     })
 
-    gsap.to('.question-marks__text', {
-        opacity: 0,
-        ease: 'expo.in',
+    // panel 3
+    // what does an arc do
+    gsap.to('#panel-three', {
         scrollTrigger: {
-            trigger: '#question-marks', 
-            start: 'center center',
-            end: 'bottom+=700 top', 
-            markers: true, 
-            toggleActions: 'play none none reverse', 
+            trigger: '#panel-three', 
+            start: 'top top', 
+            end: '+=5000rem', 
+            pin: true, 
             scrub: true
         }
     })
-    
 
+    gsap.to('.panel-three__text', {
+        opacity: 0,
+        scrollTrigger: {
+            trigger: '#panel-three', 
+            start: '+=2000rem', 
+            end: '+=2500rem', 
+            scrub: true, 
+        }
+    })
+
+    gsap.to('.close', {
+        top: '105%',
+        rotateY: 360, 
+        scrollTrigger: {
+            trigger: '.panel-three', 
+            start: 'top top', 
+            end: '+=2000rem', 
+            scrub: true
+        }
+    })
+
+    gsap.to('.medium', {
+        top: '105%',
+        rotateY: 360, 
+        scrollTrigger: {
+            trigger: '.panel-three', 
+            start: 'top top', 
+            end: '+=3500rem', 
+            scrub: true
+        }
+    })
+
+    gsap.to('.far', {
+        top: '105%',
+        rotateY: 360, 
+        scrollTrigger: {
+            trigger: '.panel-three', 
+            start: 'top top', 
+            end: '+=5000rem', 
+            scrub: true
+        }
+    })
+
+    // panel-four
+    gsap.to('#panel-four', {
+        scrollTrigger: {
+            trigger: '#panel-four', 
+            start: 'top top', 
+            end: '+=2000rem', 
+            pin: true, 
+            scrub: true
+        }
+    })
 }
 

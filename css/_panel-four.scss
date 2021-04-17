@@ -1,0 +1,18 @@
+#panel-four {
+    height: 100vh;
+    background-color: green;
+}
+
+.panel-four {
+    height: 100%;
+    position: relative;
+
+    &__text {
+        @include absPos;
+        color: white;
+        font-size: 4rem;
+        letter-spacing: .3rem;
+        overflow: none;
+        text-align: center;
+    }   
+}

@@ -1,11 +1,11 @@
 #panel-two {
-    // margin-top: -30vh;
-    // background-color: violet;
-    height: 50vh;
+    height: 100vh;
+    position: relative;
 }
 
 .panel-two {
 
+    height: 100%;
     text-align: center;
 
     &__text {
@@ -21,7 +21,7 @@
         font-weight: 800;
         color: white;
         letter-spacing: 1rem;
-
+        
         &--item {
             display: inline-block;
         }

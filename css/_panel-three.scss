@@ -1,7 +1,155 @@
 #panel-three {
-    background-color: yellow;
+    height: 100vh;
 }
 
 .panel-three {
+    height: 100%;
+    position: relative;
+
+    &__text {
+        @include absPos;
+        color: white;
+        font-size: 4rem;
+        letter-spacing: .3rem;
+        overflow: none;
+        text-align: center;
+    }   
+}
+
+.coins {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+// coin css
+// coin colors
+$main-color: orangered;
+$border-color: yellow;
+
+// 3d properties
+$depth-close: 3px;      // CLOSE: distance in the z axis of the before and after sides.
+// $shadow-max-close: 5px; // CLOSE: size of the 3d shadow
+$depth-medium: 3px;      // CLOSE: distance in the z axis of the before and after sides.
+// $shadow-max-medium: 5px; // CLOSE: size of the 3d shadow
+$depth-far: 3px;      // CLOSE: distance in the z axis of the before and after sides.
+// $shadow-max-far: 5px; // CLOSE: size of the 3d shadow
+
+// sizes
+$size-close: 10rem;   // CLOSE: size of coin
+$size-medium: 7rem;   // CLOSE: size of coin
+$size-far: 4rem;   // CLOSE: size of coin
+
+// properties for sides of the coins irrespective of coin size
+@mixin coinStandard {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;  // center
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+}
+
+@mixin closeStandard {
+    background-color: $main-color;
+    border: 1rem solid rgba($border-color, .7);
+}
+
+@mixin mediumStandard {
+    background-color: darken($main-color, 25%);
+    border: .7rem solid rgba($border-color, .4);
+}
+
+@mixin farStandard {
+    background-color: darken($main-color, 40%);
+    border: .7rem solid rgba($border-color, .1);
+}
+
+// each individual coin
+.coin {
+    position: absolute;
+    border-radius: 50%;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    user-select: none;
+}
+  
+.close {
+    top: -$size-close;
+    width: $size-close;
+    height: $size-close;
+    font-size: 3rem;
+    text-shadow: -1px -1px 1px rgba(#fff, 0.7), 1px 1px 1px  rgba(#000, 0.7);
+    background-color: rgba($border-color, .7);
+    z-index: 3;
     
+    &::before, &::after {
+        @include coinStandard;
+        @include closeStandard;
+    }
+    
+    &::before {
+        content: "FP";
+        transform: translateZ($depth-close);
+    } 
+    
+    &::after {
+        content: "$";
+        transform: translateZ(-$depth-close) rotateY(180deg);
+    } 
+}
+
+.medium {
+    top: -$size-medium;
+    width: $size-medium;
+    height: $size-medium;
+    font-size: 2rem;
+    text-shadow: -1px -1px 1px rgba(#fff, 0.4), 1px 1px 1px  rgba(#000, 0.4);
+    background-color: darken($border-color, 25%);
+    z-index: 2;
+    
+    &::before, &::after {
+        @include coinStandard;
+        @include mediumStandard;
+    }
+
+    &::before {
+        content: "FP";
+        transform: translateZ($depth-medium);
+    } 
+    
+    &::after {
+        content: "$";
+        transform: translateZ(-$depth-medium) rotateY(180deg);
+    } 
+}
+
+  .far {
+    top: -$size-far;
+    width: $size-far;
+    height: $size-far;
+    font-size: 2rem;
+    text-shadow: -1px -1px 1px rgba(#fff, 0.4), 1px 1px 1px  rgba(#000, 0.4);
+    background-color: darken($border-color, 25%);
+    z-index: 1;
+    
+    &::before, &::after {
+        @include coinStandard;
+        @include farStandard;
+    }
+
+    &::before {
+        content: "FP";
+        transform: translateZ($depth-far);
+    } 
+    
+    &::after {
+        content: "$";
+        transform: translateZ(-$depth-far) rotateY(180deg);
+    } 
 }
