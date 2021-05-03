@@ -1,18 +1,87 @@
 #panel-four {
     height: 100vh;
-    background-color: green;
 }
 
 .panel-four {
+
     height: 100%;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        // background-image:   linear-gradient(to right, transparent, transparent 30%, rgba(#000, 1) 50%, rgba(#000, 1) 100%),
+        //                     url(/asset/img/foe-bck.JPG);
+        // background-size: cover;
+    }
 
     &__text {
-        @include absPos;
+        flex: 3;
         color: white;
         font-size: 4rem;
         letter-spacing: .3rem;
         overflow: none;
         text-align: center;
     }   
+
+    &__goods {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        margin: 0 10rem;
+
+        font-size: 2rem;
+
+        &--row {
+            display: flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-image: linear-gradient(to bottom right, rgb(204,158,60), rgb(152,80,10));
+            // background-image: linear-gradient(to right, brown, lighten(brown, 20%));
+            border-radius: 3px;
+            border: .5rem solid rgba(yellow, .4);
+            box-shadow: inset 5px 5px 10px black,
+                        inset -5px -5px 10px black;
+            margin-bottom: .5rem;
+        }
+
+        &--icon {
+            position: relative;
+            justify-self: flex-start;
+            flex: 0 0 3rem;
+            margin-right: 2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        &--animatedPicture {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &--picture {
+            width: 100%;
+        }
+
+        &--name {
+            flex: 1;
+        }
+
+        &--quantity {
+            flex: 0 0 5rem;
+            text-align: right;
+            letter-spacing: .2rem;
+        }
+    }
+
+
 }
