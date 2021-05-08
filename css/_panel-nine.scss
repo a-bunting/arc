@@ -1,0 +1,132 @@
+#panel-nine {
+    height: 100vh;
+}
+
+.panel-nine {
+    position: relative;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    &__range-data {
+        flex: 1;
+
+        display: flex;
+    }
+
+    &__graph {
+        @include textStandard;
+        font-size: 2rem;
+        flex: 2;
+        padding: 5rem;
+    }
+
+    &__data {
+        @include textStandard;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 5rem;
+
+        &--range {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+
+        &--tips {
+            margin: 2rem 0;
+            font-size: 1.6rem;
+            padding: 2rem;
+            background-color: var(--color-main-medium);
+        }
+    }
+
+    
+
+    &__stats {
+        @include textStandard;
+        font-size: 2rem;
+
+        & > * {
+            padding-bottom: 1rem;
+        }
+    }
+
+    &__data-selection {
+        flex-basis: min-content;
+        display: flex;
+        flex-wrap: none;
+        justify-content: center;
+        align-items: stretch;
+        overflow-x: auto;
+    }
+
+    &__controls {
+        opacity: 0;
+        visibility: hidden;    
+    }
+
+    &__selection {
+        @include textStandard;
+        text-align: center;
+        position: relative;
+        background-color: var(--color-main-medium);
+        font-size: 2.4rem;
+        flex-basis: 20rem;
+        padding: 1rem 2rem;
+        margin: 1rem 1rem;
+        border-radius: .5rem;
+        border: .5rem solid var(--color-main-dark);
+        transition: all .2s;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            background-color: var(--color-main-light);
+            border: .5rem solid var(--color-main-dark);
+            cursor: pointer;
+            color: black;
+            transform: scale(1.05);
+        }
+    }
+}
+
+.showControls {
+    opacity: 1;
+    visibility: visible;
+}
+
+svg.fpGraph {
+
+    width: 100%;
+    height: 100%;
+    font-size: 1.6rem;
+
+    .grid {
+        stroke: black;
+        stroke-dasharray: 1 2;
+        stroke-width: 1;
+    }
+    
+    .axis-grid {
+        stroke: black;
+        stroke-width: 2;
+        stroke-dasharray: none;
+    }
+    
+    .points {
+        stroke-dasharray: none;
+        &:hover {
+            filter: brightness(110%);
+        }
+    }
+    .totalPoints {
+        fill: red;
+    }
+
+    .selfPoints {
+        fill: green;
+    }
+}
+

@@ -4,3 +4,23 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+@mixin cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+@mixin afterCover {
+    @include cover;
+}
+
+@mixin beforeCover {
+    @include cover;
+}
+
+@mixin textStandard {
+    color: white;
+    letter-spacing: .3rem;
+}

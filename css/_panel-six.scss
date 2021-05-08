@@ -93,9 +93,10 @@
                 height: 3rem;
                 justify-self: flex-end;
                 margin-right: 1rem;
-
+                border-radius: .5rem;
+                
                 position: relative;
-
+                
                 &--background {
                     position: absolute;
                     top: 0;
@@ -103,7 +104,8 @@
                     height: 100%;
                     width: 100%;
                     background-image: repeating-linear-gradient(to right, transparent, transparent 2rem, rgba(black, .3) 2rem, rgba(black, .3) 2.2rem, transparent 2.2rem);
-                    background-color: green;
+                    background-color: rgba(green, .8);
+                    border-radius: .5rem;
                 }
 
                 &--quantity {
@@ -250,10 +252,10 @@
             grid-column: 2 / span 1;
             grid-row: 3 / 4;
             font-size: 1.5rem;
-            background-image:   url(../asset/img/fp-icon.png),
-                                linear-gradient(to right, rgb(90,133,8) 30%, rgb(37,51,9) 30%);
-                                background-position: 96%, 50%;
-                                background-repeat: no-repeat;
+            background-image: url(../asset/img/fp-icon.png);
+            background-color: rgba(37,51,9,1);
+            background-position: 96%, 50%;
+            background-repeat: no-repeat;
             border-radius: .5rem;
             text-align: center;
             padding: .5rem;
@@ -262,6 +264,24 @@
             border-radius: .2rem solid black;
             align-self: flex-start;
             transform: translateY(.2rem);
+            overflow: hidden;
+
+            position: relative;
+
+            &--fpCount {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                background-color: rgba(30,137,8, 1);
+            }
+
+            .cdmProgress, .coaProgress {
+                width: 0%;
+                border-radius: .5rem;
+                z-index: -1;
+            }
+
         }
         
         &--openButton {

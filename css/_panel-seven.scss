@@ -1,8 +1,157 @@
 #panel-seven {
     height: 100vh;
-    background-color: green;
 }
 
 .panel-seven {
+    position: relative;
     height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+
+    &__text {
+        flex: 1;
+        color: white;
+        font-size: 4rem;
+        letter-spacing: .3rem;
+        overflow: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__labels, &__data, &__legend {
+        display: flex;
+        align-items: stretch;
+    }
+
+    &__data {
+        height: 78%;
+    }
+
+    &__legend {
+        
+        justify-content: center;
+        margin: 2rem;
+
+        &--text {
+            color: white;
+            font-size: 3rem;
+            letter-spacing: .3rem;
+        }
+
+        &--key {
+
+            padding: 2rem;
+            width: 4rem;
+            height: 4rem;
+            margin: 0 2rem;
+            border-radius: .5rem;
+
+            &Normal { background-image: linear-gradient(to right, rgb(227,212,169) -10%, rgb(173,133,81), rgb(227,212,169) 110%); }
+            &Bonus { background-image: linear-gradient(to right, rgb(173,133,81), rgb(227,212,169), rgb(173,133,81)); }
+        }
+    }
+
+    &__flex-panel {
+        flex: 5;
+        padding: 1rem 5rem;
+        display: flex;
+    }
+
+    &__results {
+        flex: 1;
+
+        &--label {
+            flex: 1;
+            font-size: 4rem;
+            color: white;
+            text-align: center;
+            height: 8rem;
+            align-self: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &--text {
+            color: white;
+            font-size: 2.4rem;
+            letter-spacing: .3rem;
+        }
+
+        &--reward, &--bonus {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            justify-content: flex-end;
+            // border between levels
+            &:nth-child(even) {
+                &:not(:last-child) {
+                    padding-right: 1rem;
+                }
+            }
+            // border between reward and bonus
+            &:nth-child(odd) {
+                &:not(:last-child) {
+                    padding-right: .2rem;
+                }
+            }
+
+            div {
+                width: 100%;
+                height: 15%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                border-left: .4rem solid rgb(130,104,82);
+                border-right: .4rem solid rgb(130,104,82);
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid rgba(black, .3);
+                }
+
+                &:first-child {
+                    border-radius: .5rem .5rem 0 0 ;
+                    border: .4rem solid rgb(130,104,82);
+                    border-bottom: 1px solid rgba(black, .3);
+                }
+            }
+        }
+
+        &--reward {
+            div {
+                // background-color: rgb(173,133,81);
+                background-image: linear-gradient(to right, rgb(227,212,169) -10%, rgb(173,133,81), rgb(227,212,169) 110%);
+            }
+        }
+        
+        &--bonus {
+            div {
+                // background-color: rgb(227,212,169);
+                background-image: linear-gradient(to right, rgb(173,133,81), rgb(227,212,169), rgb(173,133,81));
+            }
+        }
+    }
+
+    &__conclusion {
+        color: white;
+        font-size: 4rem;
+        letter-spacing: .3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-left: 4rem;
+        text-align: center;
+        flex: 0.5;
+
+        span {
+            &:not(:last-child) {
+                margin-bottom: 5rem;
+            }
+        }
+    }
 }

@@ -2,6 +2,10 @@
 :root {
     --color-main-dark: #000;
     --text-color-light: #fff;
+
+    --color-main-light: rgb(227,212,169);
+    --color-main-medium: rgb(173,133,81);
+    --color-main-dark: rgb(130,104,82);
 }
 
 *, *::after, *::before {
@@ -39,5 +43,7 @@ body {
 @import 'panel-five';
 @import 'panel-six';
 @import 'panel-seven';
+@import 'panel-eight';
+@import 'panel-nine';
 
 @import 'question-marks';
